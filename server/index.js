@@ -1,4 +1,5 @@
 const express = require('express');
+const models = require('./database/database.js')
 let app = express();
 
 let bodyparser = require('body-parser');

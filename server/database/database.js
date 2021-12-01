@@ -27,10 +27,21 @@ const writeGenPrice = function(price, symbol) {
   })
 }
 
-//const getGenPrice = function(symbol){
- // return new Promise ((resolve, reject)
-//}
+const getGenPrice = function(){
+ return new Promise ((resolve, reject) =>{
+   connection.query('SELECT * FROM ETH ORDER BY ts DESC LIMIT 60', (err, results, fields) => {
+     if(err){
+       console.log('Error getting ETH data');
+       reject(err)
+     } else {
+       console.log('Success getting ETH data');
+       resolve(results);
+     }
+   })
+ })
+}
 
 module.exports = {
-  writeGenPrice
+  writeGenPrice,
+  getGenPrice
 }

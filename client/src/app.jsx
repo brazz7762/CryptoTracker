@@ -14,7 +14,7 @@ class App extends React.Component {
   render() {
     return(
       <div>
-        <div><h1>Pee Pee Poo Poo Oh No No</h1></div>
+        <div><h1>Ayyyyyy</h1></div>
         <div><h2>Hellooooo thereeeeee Broseph Stalin</h2></div>
       </div>
     )

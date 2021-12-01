@@ -18,13 +18,23 @@ app.listen(port, function(){
 
 app.post('/api/writePrice', async function (req, res) {
   try{
-    console.log('running in get right now')
+    console.log('running in post right now')
     var test = 4600;
     var symbol = 'ETH';
     models.writeGenPrice(test, symbol);
     console.log('Yayyyy this worked!')
   } catch {
     console.log('Error doing the writing/getting')
+  }
+})
+
+app.get('/api/getPrices', async function (req, res) {
+  try {
+    console.log('running in get right now')
+    var results = await models.getGenPrice();
+    console.log('data', results)
+  } catch {
+    console.log('Error doing the get request')
   }
 })
 

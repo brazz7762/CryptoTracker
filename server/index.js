@@ -32,7 +32,8 @@ app.get('/api/getPrices', async function (req, res) {
   try {
     console.log('running in get right now')
     var results = await models.getGenPrice();
-    console.log('data', results)
+    //console.log('data', results)
+    res.status(200).send(results);
   } catch {
     console.log('Error doing the get request')
   }
